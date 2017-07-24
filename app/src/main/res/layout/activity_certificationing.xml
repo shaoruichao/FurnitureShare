@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.FurnitureShare.ui.activity.CertificationingActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_login"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff">
+
+        <Button
+            android:id="@+id/bt_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="#00000000"/>
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="9dp"
+            android:layout_height="16dp"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/return_black"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="实名认证"
+            android:textSize="15sp"
+            android:textColor="#181818"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#0A0A0A"/>
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
+        android:src="@mipmap/cering"/>
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_below="@+id/iv"
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="认证状态"
+        android:textSize="15sp"
+        android:textColor="#181818"/>
+
+    <RelativeLayout
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/tv"
+        android:layout_width="18dp"
+        android:layout_height="128dp">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:background="#F3D05A" />
+
+        <ImageView
+            android:id="@+id/iv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/cersucess"/>
+
+
+        <ImageView
+            android:id="@+id/iv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/cerings"/>
+
+        <ImageView
+            android:id="@+id/iv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/nocer"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="17dp"
+        android:layout_marginLeft="40dp"
+        android:layout_below="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="144dp">
+
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#181818"
+            android:text="实名认证已提交"/>
+
+        <TextView
+            android:id="@+id/tv_creattime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:textSize="13sp"
+            android:textColor="#606060"
+            android:text=""/>
+
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textSize="14sp"
+            android:textColor="#181818"
+            android:text="实名认证审核中"/>
+
+        <TextView
+            android:id="@+id/tv_creattime1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:textSize="13sp"
+            android:textColor="#606060"
+            android:text=""/>
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:textSize="14sp"
+            android:textColor="#181818"
+            android:text="实名认证成功"/>
+
+        <TextView
+            android:id="@+id/tv_edittime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentBottom="true"
+            android:textSize="13sp"
+            android:textColor="#606060"
+            android:text=""/>
+
+
+    </RelativeLayout>
+</RelativeLayout>

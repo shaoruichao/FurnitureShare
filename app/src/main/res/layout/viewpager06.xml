@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/qidong3">
+
+    <Button
+        android:id="@+id/bt"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:background="#00000000"
+        android:onClick="startbutton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"/>
+
+    <!--<ImageView-->
+        <!--android:id="@+id/iv_logo"-->
+        <!--android:layout_width="70dp"-->
+        <!--android:layout_height="70dp"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="70dp"-->
+        <!--android:src="@drawable/login_logo_red"/>-->
+
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/rl_three1"-->
+        <!--android:visibility="gone"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_marginBottom="124dp">-->
+
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_three1"-->
+            <!--android:layout_width="226dp"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:src="@drawable/three"/>-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_three2"-->
+            <!--android:layout_width="60dp"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:layout_toRightOf="@+id/iv_three1"-->
+            <!--android:src="@drawable/three1"/>-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_three3"-->
+            <!--android:layout_width="60dp"-->
+            <!--android:layout_height="60dp"-->
+            <!--android:layout_toRightOf="@+id/iv_three2"-->
+            <!--android:src="@drawable/three2"/>-->
+
+    <!--</RelativeLayout>-->
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/rl_three2"-->
+        <!--android:visibility="gone"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="55dp"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_marginBottom="65dp">-->
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_three4"-->
+            <!--android:layout_width="226dp"-->
+            <!--android:layout_height="55dp"-->
+            <!--android:layout_marginLeft="30dp"-->
+            <!--android:src="@drawable/three3"/>-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_three5"-->
+            <!--android:layout_width="55dp"-->
+            <!--android:layout_height="55dp"-->
+            <!--android:layout_toRightOf="@+id/iv_three4"-->
+            <!--android:src="@drawable/three4"/>-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_three6"-->
+            <!--android:layout_width="55dp"-->
+            <!--android:layout_height="55dp"-->
+            <!--android:layout_toRightOf="@+id/iv_three5"-->
+            <!--android:src="@drawable/three5"/>-->
+
+    <!--</RelativeLayout>-->
+
+</RelativeLayout>

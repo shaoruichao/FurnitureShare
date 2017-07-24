@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal">
+
+
+    <RelativeLayout
+        android:id="@+id/shippinginfor"
+        android:layout_width="match_parent"
+        android:layout_height="90dp">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="孔乙己"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="10dp"
+            android:text="110"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/bt"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bt_address_sureorder"
+            android:textColor="#3B97CF"
+            android:text="默认"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="60dp"
+            android:layout_below="@+id/tv_phone"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="6dp"
+            android:text="110"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/iv4"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/manage" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/item_right"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#ffffff">
+
+        <Button
+            android:id="@+id/item_delete"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="#f72525"
+            android:clickable="false"
+            android:text="删除"
+            android:textColor="#ffffff"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+
+</LinearLayout>

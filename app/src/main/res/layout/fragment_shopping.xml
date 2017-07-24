@@ -1,0 +1,179 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:xtao="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.example.FurnitureShare.ui.fragment.ShoppingFragment">
+
+    <RelativeLayout
+        android:id="@+id/rl_login"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff">
+
+
+        <TextView
+            android:id="@+id/tv_head_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="购物车"
+            android:textSize="15sp"
+            android:textColor="#181818"/>
+
+        <TextView
+            android:id="@+id/tv_head_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"
+            android:text="编辑"
+            android:textSize="13sp"
+            android:textColor="#181818"/>
+
+        <Button
+            android:id="@+id/bt_delete"
+            android:layout_width="70dp"
+            android:layout_alignParentRight="true"
+            android:layout_height="match_parent"
+            android:background="#00000000"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#0A0A0A"/>
+    </RelativeLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/sw_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        xtao:direction="both">
+
+        <com.example.FurnitureShare.view.widget.SuperExpandableListView
+            android:id="@+id/exListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#EEEEEE"
+            android:divider="#00000000"
+            android:childIndicator="@null"
+            android:groupIndicator="@null" />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_sureOrder"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <CheckBox
+                android:id="@+id/all_chekbox"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/check_box_bg"
+                android:button="@null"
+                android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+                android:gravity="center"
+
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:textSize="14sp"
+                android:textColor="#464646"
+                android:text="全部选中"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="合计:"
+                android:textColor="#464646"
+                android:textSize="14sp"
+                />
+
+            <TextView
+                android:id="@+id/tv_total_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¥0.00"
+                android:textColor="#ff00"
+                android:textSize="14sp"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_delete"
+            android:layout_width="116dp"
+            android:visibility="gone"
+            android:layout_height="match_parent"
+            android:background="#F3D05A"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/tv_go_to_pay"
+            android:layout_width="116dp"
+            android:layout_height="match_parent"
+            android:background="#F3D05A"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="下单"
+            android:textSize="14sp"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_nomessage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/im_nomessgae"
+                android:layout_width="173dp"
+                android:layout_height="173dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="120dp"
+                android:src="@drawable/noshopping" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/im_nomessgae"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:text="您还没有商品加入购物车"
+                android:textColor="#2A2A2A"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+    </FrameLayout>
+
+</LinearLayout>

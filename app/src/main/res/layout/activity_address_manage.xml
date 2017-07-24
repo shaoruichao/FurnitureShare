@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.FurnitureShare.ui.activity.AddressManageActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_login"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff">
+
+        <Button
+            android:id="@+id/bt_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="#00000000"/>
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="9dp"
+            android:layout_height="16dp"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/return_black"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="地址管理"
+            android:textSize="15sp"
+            android:textColor="#181818"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#0A0A0A"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_login"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp">
+        <LinearLayout
+            android:id="@+id/rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                android:layout_marginLeft="20dp"
+                android:textSize="18sp"
+                android:textColor="#2A2A2A"
+                android:text="收货地址"/>
+
+            <com.example.FurnitureShare.view.Swipe.SwipeListView
+                android:id="@+id/listview"
+                android:divider="#ffffff"
+                android:layout_below="@+id/tv"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"></com.example.FurnitureShare.view.Swipe.SwipeListView>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/bt_newaddress"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/bt_address"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:text="+ 新建地址"
+        android:textColor="#FFAC00"
+        android:textSize="14sp"/>
+
+</RelativeLayout>

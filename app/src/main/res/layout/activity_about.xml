@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.FurnitureShare.ui.activity.AboutActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_login"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff">
+
+        <Button
+            android:id="@+id/bt_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="#00000000"/>
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="9dp"
+            android:layout_height="16dp"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/return_black"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="关于我们"
+            android:textSize="15sp"
+            android:textColor="#181818"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#0A0A0A"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_about_logo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/rl_login"
+        android:layout_marginTop="96dp"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/logo"/>
+
+    <TextView
+        android:id="@+id/tv_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_about_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="9dp"
+        android:textSize="13sp"
+        android:textColor="#2A2A2A"
+        android:text="V1.0.0"/>
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_companyname"
+        android:layout_marginBottom="2dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="11sp"
+        android:textColor="#2A2A2A"
+        android:text="Copyright @2017"/>
+
+    <TextView
+        android:id="@+id/tv_companyname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="51dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="11sp"
+        android:textColor="#2A2A2A"
+        android:text="北京如图高科科技有限公司"/>
+
+</RelativeLayout>

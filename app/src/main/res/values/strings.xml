@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">如图</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="filter_vcode">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+
+    <string name="paysuccess">我们将尽快安排发货，请买家保持手机通讯录畅通，以便快递小哥哥能第一时间联系到你</string>
+
+    <string name="certification">上传身份证正反面照片各1张以及本人手持身份证照</string>
+</resources>

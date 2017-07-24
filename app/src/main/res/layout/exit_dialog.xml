@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="260dp"
+    android:layout_height="140dp"
+    android:gravity="center_vertical|center_horizontal"
+    android:layout_gravity="center_vertical|center_horizontal"
+    android:background="@drawable/input_shape" >
+
+     <View 
+         android:id="@+id/view"
+         android:layout_width="match_parent"
+         android:layout_height="0.1dp"
+         android:layout_marginTop="90dp"
+         android:background="#D8D8D8"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/view"
+        android:orientation="horizontal" >
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="0.1dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="#D8D8D8" />
+
+        <Button
+            android:id="@+id/bt_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/view1"
+            android:text="取消"
+            android:textSize="15sp"
+            android:textColor="#3B93FC"
+            android:background="@null" />
+
+        <Button
+            android:id="@+id/bt_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/view1"
+            style="?android:attr/borderlessButtonStyle"
+            android:gravity="center"
+            android:text="确定"
+            android:textSize="15sp"
+            android:textColor="#3B93FC"
+            android:background="@null" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="90dp">
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="退出帐号"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"/>
+    <TextView
+        android:id="@+id/tv_dialog2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/tv"
+        android:text="是否确认退出帐号？"
+        android:textSize="16sp" />
+
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_scenario"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="场景·居民公寓"
+        android:gravity="center"
+        android:textColor="#181818"
+        android:textSize="14sp"/>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_height="194dp">
+    <ImageView
+        android:id="@+id/iv_scenario"
+        android:layout_width="match_parent"
+        android:layout_height="194dp"
+        android:layout_marginTop="15dp"
+        android:scaleType="fitXY"/>
+    
+    <RelativeLayout
+        android:background="#80FFFFFF"
+        android:layout_width="209dp"
+        android:layout_height="108dp"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:id="@+id/tv_scenario_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="良品家居"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="17dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#3D3D3D"/>
+
+        <TextView
+            android:id="@+id/tv_scenario_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_scenario_title"
+            android:text="舒适生活把日子过成诗"
+            android:layout_centerHorizontal="true"
+            android:textSize="15sp"
+            android:textColor="#3D3D3D"/>
+        
+        <Button
+            android:id="@+id/bt_scenario"
+            android:layout_width="70dp"
+            android:layout_height="24dp"
+            android:layout_below="@+id/tv_scenario_des"
+            android:background="#FED15B"
+            android:text="查看全部"
+            android:textSize="12sp"
+            android:textColor="#181818"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"/>
+
+
+    </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_scenario1"
+                android:layout_width="83dp"
+                android:layout_height="83dp"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/tv_scenario_title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/iv_scenario1"
+                android:maxEms="6"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textSize="13sp"
+                android:textColor="#616161"/>
+
+            <TextView
+                android:id="@+id/tv_scenario_price1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/tv_scenario_title1"
+                android:textSize="13sp"
+                android:textColor="#DE413D"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_scenario2"
+                android:layout_width="83dp"
+                android:layout_height="83dp"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/tv_scenario_title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/iv_scenario2"
+                android:maxEms="6"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textSize="13sp"
+                android:textColor="#616161"/>
+
+            <TextView
+                android:id="@+id/tv_scenario_price2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/tv_scenario_title2"
+                android:textSize="13sp"
+                android:textColor="#DE413D"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_scenario3"
+                android:layout_width="83dp"
+                android:layout_height="83dp"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/tv_scenario_title3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/iv_scenario3"
+                android:maxEms="6"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textSize="13sp"
+                android:textColor="#616161"/>
+
+            <TextView
+                android:id="@+id/tv_scenario_price3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/tv_scenario_title3"
+                android:textSize="13sp"
+                android:textColor="#DE413D"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

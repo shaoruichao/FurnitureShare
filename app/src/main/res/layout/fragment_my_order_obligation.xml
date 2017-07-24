@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:xtao="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.FurnitureShare.ui.fragment.MyOrderObligationFragment">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/sw_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xtao:direction="both">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_order_all"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:childIndicator="@null"
+            android:groupIndicator="@null" />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_nomessage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/im_nomessgae"
+                android:layout_width="173dp"
+                android:layout_height="173dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="120dp"
+                android:src="@drawable/noorder" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/im_nomessgae"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:text="您还没有相关的订单"
+                android:textColor="#2A2A2A"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+    </FrameLayout>
+
+</RelativeLayout>

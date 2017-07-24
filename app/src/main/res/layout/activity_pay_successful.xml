@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.FurnitureShare.ui.activity.PaySuccessfulActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_login"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff">
+
+        <Button
+            android:id="@+id/bt_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="#00000000" />
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="9dp"
+            android:layout_height="16dp"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/return_black"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="支付成功"
+            android:textSize="15sp"
+            android:textColor="#181818"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#0A0A0A"
+            android:id="@+id/view2" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/rl_login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/rl1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="28dp">
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="127dp"
+                android:src="@mipmap/paysuccess"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/iv"
+                android:layout_marginLeft="10dp"
+                android:text="支付成功"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="#FFAC00"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl1"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="@string/paysuccess"
+            android:textSize="14sp"
+            android:textColor="#606060"/>
+
+        <RelativeLayout
+            android:id="@+id/rl2"
+            android:layout_below="@+id/tv"
+            android:layout_marginTop="25dp"
+            android:layout_width="match_parent"
+            android:layout_marginRight="90dp"
+            android:layout_marginLeft="90dp"
+            android:layout_height="30dp">
+
+            <Button
+                android:id="@+id/bt_lookorder"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/bt_cancleorder"
+                android:text="查看订单"
+                android:textSize="14sp"
+                android:textColor="#434343"/>
+
+            <Button
+                android:id="@+id/bt_gohome"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/bt_pay"
+                android:text="返回首页"
+                android:textSize="14sp"
+                android:textColor="#434343"
+                />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/rv_order_all_item"
+            android:layout_marginLeft="20dp"
+            android:textSize="18sp"
+            android:textColor="#2A2A2A"
+            android:textStyle="bold"
+            android:text="订单信息"/>
+
+        <RelativeLayout
+            android:id="@+id/shippinginfor"
+            android:layout_below="@+id/tv3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="孔乙己"
+                android:textSize="14sp"
+                />
+
+            <TextView
+                android:id="@+id/tv_phone"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="92dp"
+                android:layout_marginTop="10dp"
+                android:text="110"
+                android:textSize="14sp"
+                />
+
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_phone"
+                android:layout_marginLeft="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="3dp"
+                android:text="110"
+                android:textSize="14sp"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_pay"
+            android:layout_below="@+id/shippinginfor"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="16dp">
+
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textSize="14sp"
+                android:textColor="#A0A0A0"
+                android:text="支付方式："/>
+
+            <TextView
+                android:id="@+id/tv_pay"
+                android:layout_toRightOf="@+id/tv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textSize="14sp"
+                android:textColor="#222222"
+                android:text=""/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_realpay"
+            android:layout_below="@+id/rl_freight"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="16dp">
+
+            <TextView
+                android:id="@+id/tv7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textSize="14sp"
+                android:textColor="#DE413D"
+                android:text="实付："/>
+
+            <TextView
+                android:id="@+id/tv_realpay"
+                android:layout_toRightOf="@+id/tv7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textSize="14sp"
+                android:textColor="#DE413D"
+                android:text=""/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

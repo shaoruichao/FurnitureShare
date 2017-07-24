@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="titleblue">#F3D05A</color>
+
+    <!--tabBar-->
+    <color name="tab_text_normal">#606060</color>
+    <color name="comui_tab_text_color">#181818</color>
+
+    <color name="divider">#ffd2d2d2</color>
+
+    <color name="blue">#33b5e5</color>
+
+</resources>

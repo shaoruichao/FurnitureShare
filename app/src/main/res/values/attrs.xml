@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--透明渐变的TabView-->
+    <declare-styleable name="AlphaView">
+        <attr name="av_tabIconNormal" format="reference"/>
+        <attr name="av_tabIconSelected" format="reference"/>
+        <attr name="av_tabText" format="string"/>
+        <attr name="av_tabTextSize" format="dimension"/>
+        <attr name="av_textColorNormal" format="color"/>
+        <attr name="av_textColorSelected" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="MainNavigateTabBar">
+        <attr name="navigateTabTextColor" format="color|reference"/>
+        <attr name="navigateTabSelectedTextColor" format="color|reference"/>
+        <attr name="containerId" format="integer|reference"/>
+        <attr name="navigateTabTextSize" format="dimension|reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="SwipyRefreshLayout">
+        <attr name="direction">
+            <enum name="top" value="0" />
+            <enum name="bottom" value="1" />
+            <enum name="both" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="FlyBanner">
+    <attr name="points_visibility" format="boolean"/>
+    <attr name="points_position" format="enum">
+        <enum name="CENTER" value="0"/>
+        <enum name="LEFT" value="1"/>
+        <enum name="RIGHT" value="2"/>
+    </attr>
+        <attr name="points_container_background" format="reference|color"/>
+    </declare-styleable>
+
+    <!--加减数量-->
+    <declare-styleable name="AmountView">
+        <!-- 左右2边+-按钮的宽度 -->
+        <attr name="btnWidth" format="dimension" />
+        <!-- 中间TextView的宽度 -->
+        <attr name="tvWidth" format="dimension" />
+        <!--<attr name="tvColor" format="color"/>-->
+        <attr name="tvTextSize" format="dimension"/>
+        <attr name="btnTextSize" format="dimension"/>
+    </declare-styleable>
+
+
+</resources>
