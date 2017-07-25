@@ -180,6 +180,7 @@ public class DestailActivity extends BaseActivity {
                         Log.e(TAG, "onCreate: " + "http://www.9fat.com/H5test/farmapp0608/htmls/shoppingdetailspageapp.html?id=" + id);
                         //启用支持javascript
                         WebSettings settings = webView.getSettings();
+                        settings.setTextZoom(100);//字体强制100%
                         settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN); // web内容强制满屏
 //                        settings.setUseWideViewPort(true);//设置webview推荐使用的窗口
 //                        settings.setLoadWithOverviewMode(true);//设置webview加载的页面的模式
