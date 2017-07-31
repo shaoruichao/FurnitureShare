@@ -154,7 +154,10 @@
         <activity
             android:name=".ui.activity.AgreementActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.PaySuccessfulActivity"></activity>
+        <activity android:name=".ui.activity.PaySuccessfulActivity" />
+        <activity android:name=".ui.activity.CreditActivity" />
+        <activity android:name=".ui.activity.SesameActivity" />
+        <activity android:name=".ui.activity.SesameingActivity"></activity>
     </application>
 
 </manifest>

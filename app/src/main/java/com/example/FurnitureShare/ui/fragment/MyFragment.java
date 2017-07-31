@@ -22,6 +22,7 @@ import com.example.FurnitureShare.nohttp.HttpListener;
 import com.example.FurnitureShare.ui.activity.AddressManageActivity;
 import com.example.FurnitureShare.ui.activity.CertificationActivity;
 import com.example.FurnitureShare.ui.activity.CertificationingActivity;
+import com.example.FurnitureShare.ui.activity.CreditActivity;
 import com.example.FurnitureShare.ui.activity.DataActivity;
 import com.example.FurnitureShare.ui.activity.LoginActivity;
 import com.example.FurnitureShare.ui.activity.MyContractActivity;
@@ -198,7 +199,8 @@ public class MyFragment extends BaseFragment {
                 break;
             case R.id.rl_certification:
                 if (status.equals("1")) {
-                    Ifcertification();
+//                    Ifcertification();
+                    startActivity(new Intent(getActivity(), CreditActivity.class));
                 } else {
                     startActivity(new Intent(getActivity(), LoginActivity.class));
                 }

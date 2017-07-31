@@ -8,4 +8,9 @@
     <string name="paysuccess">我们将尽快安排发货，请买家保持手机通讯录畅通，以便快递小哥哥能第一时间联系到你</string>
 
     <string name="certification">上传身份证正反面照片各1张以及本人手持身份证照</string>
+
+    <string name="realnamecertification">实名认证成功后，可获得800信用金</string>
+
+    <string name="sesamecertification">芝麻信用认证成功后，可获得800信用金</string>
+    <string name="sesame">上传支付宝中个人中心主页截图，图片中需完整显示账户、真实姓名、芝麻信用分数</string>
 </resources>

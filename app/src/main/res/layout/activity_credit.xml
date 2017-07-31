@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAEAEA"
+    tools:context="com.example.FurnitureShare.ui.activity.CreditActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_login"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff">
+
+        <Button
+            android:id="@+id/bt_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="#00000000"/>
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="9dp"
+            android:layout_height="16dp"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/return_black"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="信用认证"
+            android:textSize="15sp"
+            android:textColor="#181818"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#0A0A0A"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_realname"
+        android:layout_below="@+id/rl_login"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/iv1"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/cer"/>
+
+        <TextView
+            android:layout_toRightOf="@+id/iv1"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="实名认证"
+            android:textSize="14sp"
+            android:textColor="#484848"
+            android:layout_marginTop="13dp"/>
+
+        <TextView
+            android:layout_below="@+id/iv1"
+            android:layout_width="219dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="43dp"
+            android:text="@string/realnamecertification"/>
+
+        <TextView
+            android:id="@+id/tv_realname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:text=""
+            android:textColor="#DE413D"/>
+
+
+        <ImageView
+            android:id="@+id/iv_warehouse"
+            android:layout_width="9dp"
+            android:layout_height="16dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/common_icon_enter"/>
+
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:background="#dadada"-->
+            <!--android:layout_marginLeft="15dp"-->
+            <!--android:layout_marginRight="15dp"/>-->
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_sesame"
+        android:layout_below="@+id/rl_realname"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_marginTop="9dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/iv2"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/sesame"/>
+
+        <TextView
+            android:layout_toRightOf="@+id/iv2"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="芝麻信用认证"
+            android:textSize="14sp"
+            android:textColor="#484848"
+            android:layout_marginTop="13dp"/>
+
+        <TextView
+            android:layout_below="@+id/iv2"
+            android:layout_width="219dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="43dp"
+            android:text="@string/sesamecertification"/>
+
+        <TextView
+            android:id="@+id/tv_sesame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:text=""
+            android:textColor="#DE413D"/>
+
+
+        <ImageView
+            android:id="@+id/iv_sesame"
+            android:layout_width="9dp"
+            android:layout_height="16dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/common_icon_enter"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -25,6 +25,7 @@ import com.example.FurnitureShare.app.AllUrl;
 import com.example.FurnitureShare.app.FSApplication;
 import com.example.FurnitureShare.base.BaseActivity;
 import com.example.FurnitureShare.bean.ProductInfo;
+import com.example.FurnitureShare.entry.CountPrice;
 import com.example.FurnitureShare.entry.PushOrderAli;
 import com.example.FurnitureShare.entry.UserMessage;
 import com.example.FurnitureShare.nohttp.HttpListener;
@@ -52,7 +53,6 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import okhttp3.Call;
 
 /**
  * 确认订单
@@ -131,6 +131,10 @@ public class SuerOrderActivity extends BaseActivity {
     TextView tvTotalPrice;
     @BindView(R.id.rl_pay)
     RelativeLayout rlPay;
+    @BindView(R.id.tv_margin)
+    TextView tvMargin;
+    @BindView(R.id.tv_breaks)
+    TextView tvBreaks;
 
     private List<ProductInfo> productLists = new ArrayList<>();
     private ArrayList<String> listcartid;
@@ -173,14 +177,19 @@ public class SuerOrderActivity extends BaseActivity {
                             }
                         }
                         Intent intent = new Intent();
-                        intent.putExtra("way",way);
-                        intent.putExtra("result",result);
-                        intent.setClass(getBaseContext(),PaySuccessfulActivity.class);
+                        intent.putExtra("way", way);
+                        intent.putExtra("result", result);
+                        intent.setClass(getBaseContext(), PaySuccessfulActivity.class);
                         startActivity(intent);
 
                     } else {
                         // 该笔订单真实的支付结果，需要依赖服务端的异步通知。
-                        Toast.makeText(SuerOrderActivity.this, "支付失败", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SuerOrderActivity.this, "支付失败1", Toast.LENGTH_SHORT).show();
+                        for (int x = 0; x < listcartid.size(); x++) {
+                            if (!listcartid.get(x).equals("")) {
+                                PostShoppingcartEdit();
+                            }
+                        }
 
                     }
                     break;
@@ -277,8 +286,8 @@ public class SuerOrderActivity extends BaseActivity {
                     String leasedays = productLists.get(a).getLeasedays();//租借时长
 
                     if (ids.equals(idss)) {
-                        if (leasedays2.equals(leasedays)){
-                            sss += "\"id\":\"" + idss+"\",\"count\":\""+counts + "\",\"leasedays\":\"" + leasedays + "\",\"foregift\":\"" + foregift + "\"\"";
+                        if (leasedays2.equals(leasedays)) {
+                            sss += "\"id\":\"" + idss + "\",\"count\":\"" + counts + "\",\"leasedays\":\"" + leasedays + "\",\"foregift\":\"" + foregift + "\"\"";
 //                            sss += "\"" + idss+"\",\""+counts + "\",\"" + leasedays + "\",\"" + foregift + "\",";
                         }
                     }
@@ -290,7 +299,7 @@ public class SuerOrderActivity extends BaseActivity {
 
                 if (shopname.equals(shopnames)) {
 //                    s += "{\"" + ids + "\":" + sss + "},";
-                    s += ""+sss +",";
+                    s += "" + sss + ",";
                 }
             }
             s = s.substring(0, s.length() - 1);
@@ -324,7 +333,7 @@ public class SuerOrderActivity extends BaseActivity {
             myJsonArray = new JSONArray(ss);
 
 
-            for (int j = 0; j < myJsonArray.length(); j++){
+            for (int j = 0; j < myJsonArray.length(); j++) {
 
                 for (int i = 0; i < myJsonArray.length(); i++) {
 //获取每一个JsonObject对象
@@ -378,6 +387,8 @@ public class SuerOrderActivity extends BaseActivity {
                 getBaseContext(), "userMessage");
         Log.e(TAG, "onCreate: " + userMessage);
 
+        PostPrice();
+
     }
 
     @Override
@@ -416,6 +427,7 @@ public class SuerOrderActivity extends BaseActivity {
 
 
     @OnClick({R.id.bt_back, R.id.rl_shippingadress, R.id.rl_weixinpay, R.id.rl_alipay, R.id.rl_pay})
+
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.bt_back:
@@ -460,6 +472,88 @@ public class SuerOrderActivity extends BaseActivity {
 
                 break;
         }
+    }
+
+    //计算价格
+    private void PostPrice() {
+        PostRequest tag = OkGo.post(AllUrl.COUNTPRICE).tag(this);
+
+        for (int x = 0; x < myJsonArray.length(); x++) {
+
+            try {
+                JSONObject myjObject = myJsonArray.getJSONObject(x);
+
+                Log.e(TAG, "x: " + x);
+                tag.params("orderinfo" + "[" + x + "]" + "[" + "shopname" + "]", myjObject.getString("shopname"));
+                Log.e(TAG, "orderinfoshopname: " + myjObject.getString("shopname"));
+//                tag.params("orderinfo"+"["+x+"]"+"["+"freight"+"]", myjObject.getString("freight"));
+
+                JSONArray goodsinfo = myjObject.getJSONArray("goodsinfo");
+
+                Log.e(TAG, "PostSuerOrderAli: " + goodsinfo);
+                for (int q = 0; q < goodsinfo.length(); q++) {
+
+                    Log.e(TAG, "q: " + q);
+                    JSONObject jsonObject = goodsinfo.getJSONObject(q);
+                    Log.e(TAG, "PostSuerOrderAli: " + jsonObject);
+
+                    String count = jsonObject.getString("count");
+                    String foregift = jsonObject.getString("foregift");
+                    String id = jsonObject.getString("id");
+                    String leasedays = jsonObject.getString("leasedays");
+
+                    tag.params("orderinfo" + "[" + x + "]" + "[" + "goodsinfo" + "]" + "[" + q + "]" + "[count]", count);
+                    tag.params("orderinfo" + "[" + x + "]" + "[" + "goodsinfo" + "]" + "[" + q + "]" + "[foregift]", foregift);
+                    tag.params("orderinfo" + "[" + x + "]" + "[" + "goodsinfo" + "]" + "[" + q + "]" + "[id]", id);
+                    tag.params("orderinfo" + "[" + x + "]" + "[" + "goodsinfo" + "]" + "[" + q + "]" + "[leasedays]", leasedays);
+
+                }
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        tag.execute(new StringCallback() {
+
+            private int js;
+            private int jm;
+            private int hj;
+            private int bg;
+            private CountPrice.DataBeanX data;
+            private String msg;
+            private int code;
+
+            @Override
+            public void onSuccess(Response<String> response) {
+                Log.e(TAG, "onSuccess1: " + response.body().toString());
+
+                CountPrice countPrice = JsonUtil.parseJsonToBean(response.body().toString(), CountPrice.class);
+                if (countPrice != null) {
+                    code = countPrice.getCode();
+                    msg = countPrice.getMsg();
+                    data = countPrice.getData();
+                    if (code == 200) {
+                        bg = data.getBg();//损坏保证金
+                        hj = data.getHj();//合计
+                        jm = data.getJm();//减免额
+                        js = data.getJs();//件数
+
+                        tvMargin.setText("损坏保证金："+bg);
+                        tvBreaks.setText("减免额："+jm);
+                        tvTotal.setText("合计："+ hj);
+                    }
+                }
+
+
+            }
+
+            @Override
+            public void onError(Response<String> response) {
+                ToastUtil.showToast(getBaseContext(), "网络连接失败，请稍后再试");
+            }
+        });
+
+
     }
 
     private void PostSuerOrder() {
@@ -590,12 +684,12 @@ public class SuerOrderActivity extends BaseActivity {
 
                 JSONArray goodsinfo = myjObject.getJSONArray("goodsinfo");
 
-                Log.e(TAG, "PostSuerOrderAli: "+goodsinfo );
+                Log.e(TAG, "PostSuerOrderAli: " + goodsinfo);
                 for (int q = 0; q < goodsinfo.length(); q++) {
 
                     Log.e(TAG, "q: " + q);
                     JSONObject jsonObject = goodsinfo.getJSONObject(q);
-                    Log.e(TAG, "PostSuerOrderAli: "+jsonObject );
+                    Log.e(TAG, "PostSuerOrderAli: " + jsonObject);
 
                     String count = jsonObject.getString("count");
                     String foregift = jsonObject.getString("foregift");

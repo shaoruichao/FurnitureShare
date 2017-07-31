@@ -288,6 +288,8 @@ public class HomeFragment extends BaseFragment {
     @RequiresApi(api = Build.VERSION_CODES.M)
     private void initGridMenu(HomeListAdapter homeListAdapter) {
         View gridMenu = LayoutInflater.from(getActivity()).inflate(R.layout.grid_menu, rvHome, false);
+        ImageView iv_grid = (ImageView) gridMenu.findViewById(R.id.iv_grid);
+        Glide.with(getActivity()).load("http://rutu.9fat.com/352.jpg").into(iv_grid);
         TextView tv_menu_title = (TextView) gridMenu.findViewById(R.id.tv_menu_title);
         tv_menu_title.setText(msg);
         Button bt_menu = (Button) gridMenu.findViewById(R.id.bt_menu);

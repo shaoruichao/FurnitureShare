@@ -160,11 +160,15 @@ public class ShopcartExpandableListViewAdapter extends BaseExpandableListAdapter
             cholder.iv_adapter_list_pic = (ImageView) convertView.findViewById(R.id.iv_adapter_list_pic);
             cholder.tv_product_desc = (TextView) convertView.findViewById(R.id.tv_intro);
             cholder.tv_leasepay = (TextView) convertView.findViewById(R.id.tv_leasepay);
+            cholder.tv_leasepay1 = (TextView) convertView.findViewById(R.id.tv_leasepay1);
             cholder.rl_leasepay = (RelativeLayout) convertView.findViewById(R.id.rl_leasepay);
+            cholder.rl = (RelativeLayout) convertView.findViewById(R.id.rl);
+            cholder.ll_num = (LinearLayout) convertView.findViewById(R.id.ll_num);
             cholder.tv_price = (TextView) convertView.findViewById(R.id.tv_price);
             cholder.iv_increase = (TextView) convertView.findViewById(R.id.tv_add);
             cholder.iv_decrease = (TextView) convertView.findViewById(R.id.tv_reduce);
             cholder.tv_count = (TextView) convertView.findViewById(R.id.tv_num);
+            cholder.tv_count1 = (TextView) convertView.findViewById(R.id.tv_num1);
 
             cholder.tv_delete = (ImageView) convertView.findViewById(R.id.back);
             // childrenMap.put(groupPosition, convertView);
@@ -174,6 +178,23 @@ public class ShopcartExpandableListViewAdapter extends BaseExpandableListAdapter
             cholder = (ChildHolder) convertView.getTag();
         }
         final ProductInfo product = (ProductInfo) getChild(groupPosition, childPosition);
+
+        if (product.isEditing()) {
+            cholder.rl_leasepay.setVisibility(View.VISIBLE);
+            cholder.tv_leasepay1.setVisibility(View.GONE);
+            cholder.ll_num.setVisibility(View.VISIBLE);
+            cholder.rl.setVisibility(View.GONE);
+
+//            childViewHolder.id_ll_normal.setVisibility(View.GONE);
+//            childViewHolder.id_ll_edtoring.setVisibility(View.VISIBLE);
+        } else {
+            cholder.rl_leasepay.setVisibility(View.GONE);
+            cholder.tv_leasepay1.setVisibility(View.VISIBLE);
+            cholder.ll_num.setVisibility(View.GONE);
+            cholder.rl.setVisibility(View.VISIBLE);
+//            childViewHolder.id_ll_normal.setVisibility(View.VISIBLE);
+//            childViewHolder.id_ll_edtoring.setVisibility(View.GONE);
+        }
 
         if (product != null) {
 
@@ -185,6 +206,7 @@ public class ShopcartExpandableListViewAdapter extends BaseExpandableListAdapter
             String leasedays = product.getLeasedays();
             String pay_way = product.getPay_way();
             cholder.tv_leasepay.setText(leasedays+"个月");
+            cholder.tv_leasepay1.setText(leasedays+"个月");
             String per = product.getPer();
             //取整（四舍五入）
             double d1 = Double.valueOf(per);
@@ -195,6 +217,7 @@ public class ShopcartExpandableListViewAdapter extends BaseExpandableListAdapter
 
 
             cholder.tv_count.setText(product.getCount() + "");
+            cholder.tv_count1.setText("×"+product.getCount() + "");
             cholder.cb_check.setChecked(product.isChoosed());
             cholder.cb_check.setOnClickListener(new OnClickListener() {
                 @Override
@@ -251,6 +274,19 @@ public class ShopcartExpandableListViewAdapter extends BaseExpandableListAdapter
         return convertView;
     }
 
+    //供总编辑按钮调用
+    public void setupEditingAll(boolean isEditingAll) {
+        for (int i = 0; i < groups.size(); i++) {
+
+            List<ProductInfo> productInfos = children.get(groups.get(i).getId());
+            for (int j = 0; j < productInfos.size(); j++) {
+                ProductInfo productInfo = (ProductInfo) getChild(i, j);
+                productInfo.setEditing(isEditingAll);
+            }
+        }
+        notifyDataSetChanged();
+    }
+
     @Override
     public boolean isChildSelectable(int groupPosition, int childPosition) {
         return false;
@@ -275,10 +311,14 @@ public class ShopcartExpandableListViewAdapter extends BaseExpandableListAdapter
         TextView tv_product_name;
         TextView tv_product_desc;
         TextView tv_leasepay;
+        TextView tv_leasepay1;
         RelativeLayout rl_leasepay;
+        RelativeLayout rl;
+        LinearLayout ll_num;
         TextView tv_price;
         TextView iv_increase;
         TextView tv_count;
+        TextView tv_count1;
         TextView iv_decrease;
         ImageView tv_delete;
     }

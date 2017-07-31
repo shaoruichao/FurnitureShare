@@ -287,11 +287,16 @@ public class ShoppingFragment extends BaseFragment implements ShopcartExpandable
                             int i1 = (int) Math.round(dd1);
                             String price1 = String.valueOf(i1);
                             Log.e(TAG, "onClick: " + price1);
+                            String leasedays = product.getLeasedays();
+
                             String leaseprice = product.getLeaseprice();
                             String foregift = product.getForegift();
 
-                            totalPrice += Double.parseDouble(leaseprice);
-                            totalforegift += Double.parseDouble(foregift);
+//                            totalPrice += Double.parseDouble(leaseprice);
+//                            totalforegift += Double.parseDouble(foregift);
+
+
+                            totalPrice += (Double.parseDouble(price1)) * product.getCount()* (Double.parseDouble(leasedays));
 
                             productLists.add(product);
 
@@ -309,11 +314,13 @@ public class ShoppingFragment extends BaseFragment implements ShopcartExpandable
             case R.id.bt_delete:
                 if (mark) {
                     tv_head_delete.setText("完成");
+                    selva.setupEditingAll(true);
                     tv_go_to_pay.setVisibility(View.GONE);
                     tv_delete.setVisibility(View.VISIBLE);
                     mark = false;
                 } else {
                     tv_head_delete.setText("编辑");
+                    selva.setupEditingAll(false);
                     tv_go_to_pay.setVisibility(View.VISIBLE);
                     tv_delete.setVisibility(View.GONE);
                     mark = true;
@@ -419,38 +426,42 @@ public class ShoppingFragment extends BaseFragment implements ShopcartExpandable
                     int i1 = (int) Math.round(dd1);
                     String price1 = String.valueOf(i1);
                     Log.e(TAG, "onClick: " + price1);
+                    String leasedays = product.getLeasedays();
+                    Log.e(TAG, "calculate: "+product.getLeasedays() );
 
                     String leaseprice = product.getLeaseprice();
                     String foregift = product.getForegift();
 
-                    totalPrice += Double.parseDouble(leaseprice);
-//                    totalPrice += (Double.parseDouble(price1)) * product.getCount();
-                    totalforegift += Double.parseDouble(foregift);
+
+                    totalPrice += (Double.parseDouble(price1)) * product.getCount() * (Double.parseDouble(leasedays));
+//                    totalPrice += Double.parseDouble(leaseprice);
+//                    totalforegift += Double.parseDouble(foregift);
 
                 }
             }
         }
 
-        Log.e(TAG, "原始押金: "+totalforegift );
-        //取整
-        double d1 = Double.valueOf(point);
-        double dd1=(double) (d1/100);
-        Log.e(TAG, "calculatedd1: "+dd1 );
-        double v = totalforegift - dd1;
-        Log.e(TAG, "calculatevvv: "+v );
-        int point1 = (int) Math.floor(v);
-        Log.e(TAG, "calculate1111: "+point1 );
-
-        //double 保留两位小数点
-        if (point1 < 500 ){
-            point1 = 500;
-        }
-        if (totalPrice == 0.00){
-            point1 = 0;
-        }
-        result = String.format("%.2f", totalPrice + point1);
-        Log.e(TAG, "租金: "+totalPrice );
-        Log.e(TAG, "押金: "+point1 );
+//        Log.e(TAG, "原始押金: "+totalforegift );
+//        //取整
+//        double d1 = Double.valueOf(point);
+//        double dd1=(double) (d1/100);
+//        Log.e(TAG, "calculatedd1: "+dd1 );
+//        double v = totalforegift - dd1;
+//        Log.e(TAG, "calculatevvv: "+v );
+//        int point1 = (int) Math.floor(v);
+//        Log.e(TAG, "calculate1111: "+point1 );
+//
+//        //double 保留两位小数点
+//        if (point1 < 500 ){
+//            point1 = 500;
+//        }
+//        if (totalPrice == 0.00){
+//            point1 = 0;
+//        }
+//        result = String.format("%.2f", totalPrice + point1);
+//        Log.e(TAG, "租金: "+totalPrice );
+//        Log.e(TAG, "押金: "+point1 );
+        result = String.format("%.2f", totalPrice);
         tv_total_price.setText("¥" + result);
         tv_go_to_pay.setText("下单(" + totalCount + ")");
     }
@@ -907,6 +918,10 @@ public class ShoppingFragment extends BaseFragment implements ShopcartExpandable
                     groups.clear();
                     children.clear();
                     PostShoppingcart();
+                    tv_head_delete.setText("编辑");
+                    selva.setupEditingAll(false);
+                    tv_go_to_pay.setVisibility(View.VISIBLE);
+                    tv_delete.setVisibility(View.GONE);
 //                        data = leasePrice.getData();
 //                        foregift = data.getForegift();
 //                        leaseprice = data.getLeaseprice();

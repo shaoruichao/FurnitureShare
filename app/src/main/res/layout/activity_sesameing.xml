@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.FurnitureShare.ui.activity.CertificationingActivity">
+    tools:context="com.example.FurnitureShare.ui.activity.SesameingActivity">
 
     <RelativeLayout
         android:id="@+id/rl_login"
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="实名认证"
+            android:text="芝麻信用认证"
             android:textSize="15sp"
             android:textColor="#181818"/>
 
@@ -118,7 +118,7 @@
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:textColor="#181818"
-            android:text="实名认证已提交"/>
+            android:text="芝麻信用认证已提交"/>
 
         <TextView
             android:id="@+id/tv_creattime"
@@ -138,7 +138,7 @@
             android:layout_centerVertical="true"
             android:textSize="14sp"
             android:textColor="#181818"
-            android:text="实名认证审核中"/>
+            android:text="芝麻信用认证审核中"/>
 
         <TextView
             android:id="@+id/tv_creattime1"
@@ -158,7 +158,7 @@
             android:layout_alignParentBottom="true"
             android:textSize="14sp"
             android:textColor="#181818"
-            android:text="实名认证成功"/>
+            android:text="芝麻信用认证成功"/>
 
         <TextView
             android:id="@+id/tv_edittime"
@@ -173,4 +173,5 @@
 
 
     </RelativeLayout>
+
 </RelativeLayout>

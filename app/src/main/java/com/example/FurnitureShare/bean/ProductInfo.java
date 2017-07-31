@@ -25,6 +25,17 @@ public class ProductInfo extends BaseInfo implements Serializable
 
 	private boolean isTop;
 
+	/** 是否是编辑状态 */
+	private boolean isEditing;
+
+	public boolean isEditing() {
+		return isEditing;
+	}
+
+	public void setEditing(boolean editing) {
+		isEditing = editing;
+	}
+
 	public boolean isTop() {
 		return isTop;
 	}
