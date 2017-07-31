@@ -8,9 +8,10 @@ import java.io.Serializable;
 
 public class CountPrice implements Serializable {
 
+
     /**
      * code : 200
-     * data : {"bg":59244,"data":{"rutu":{"bg":59244,"jm":0,"js":3,"sz":0,"zj":59256}},"hj":118500,"jm":0,"js":3}
+     * data : {"bg":"40127","data":{"rutu":{"bg":"40127","jm":"0","js":"3","sz":"243.75","zj":"41403"}},"hj":"81773.75","jm":"0","js":"3"}
      * msg : 订单价格确认接口
      */
 
@@ -42,26 +43,26 @@ public class CountPrice implements Serializable {
         this.msg = msg;
     }
 
-    public static class DataBeanX {
+    public static class DataBeanX implements Serializable{
         /**
-         * bg : 59244
-         * data : {"rutu":{"bg":59244,"jm":0,"js":3,"sz":0,"zj":59256}}
-         * hj : 118500
+         * bg : 40127
+         * data : {"rutu":{"bg":"40127","jm":"0","js":"3","sz":"243.75","zj":"41403"}}
+         * hj : 81773.75
          * jm : 0
          * js : 3
          */
 
-        private int bg;
+        private String bg;
         private DataBean data;
-        private int hj;
-        private int jm;
-        private int js;
+        private String hj;
+        private String jm;
+        private String js;
 
-        public int getBg() {
+        public String getBg() {
             return bg;
         }
 
-        public void setBg(int bg) {
+        public void setBg(String bg) {
             this.bg = bg;
         }
 
@@ -73,33 +74,33 @@ public class CountPrice implements Serializable {
             this.data = data;
         }
 
-        public int getHj() {
+        public String getHj() {
             return hj;
         }
 
-        public void setHj(int hj) {
+        public void setHj(String hj) {
             this.hj = hj;
         }
 
-        public int getJm() {
+        public String getJm() {
             return jm;
         }
 
-        public void setJm(int jm) {
+        public void setJm(String jm) {
             this.jm = jm;
         }
 
-        public int getJs() {
+        public String getJs() {
             return js;
         }
 
-        public void setJs(int js) {
+        public void setJs(String js) {
             this.js = js;
         }
 
         public static class DataBean {
             /**
-             * rutu : {"bg":59244,"jm":0,"js":3,"sz":0,"zj":59256}
+             * rutu : {"bg":"40127","jm":"0","js":"3","sz":"243.75","zj":"41403"}
              */
 
             private RutuBean rutu;
@@ -114,56 +115,56 @@ public class CountPrice implements Serializable {
 
             public static class RutuBean {
                 /**
-                 * bg : 59244
+                 * bg : 40127
                  * jm : 0
                  * js : 3
-                 * sz : 0
-                 * zj : 59256
+                 * sz : 243.75
+                 * zj : 41403
                  */
 
-                private int bg;
-                private int jm;
-                private int js;
-                private int sz;
-                private int zj;
+                private String bg;
+                private String jm;
+                private String js;
+                private String sz;
+                private String zj;
 
-                public int getBg() {
+                public String getBg() {
                     return bg;
                 }
 
-                public void setBg(int bg) {
+                public void setBg(String bg) {
                     this.bg = bg;
                 }
 
-                public int getJm() {
+                public String getJm() {
                     return jm;
                 }
 
-                public void setJm(int jm) {
+                public void setJm(String jm) {
                     this.jm = jm;
                 }
 
-                public int getJs() {
+                public String getJs() {
                     return js;
                 }
 
-                public void setJs(int js) {
+                public void setJs(String js) {
                     this.js = js;
                 }
 
-                public int getSz() {
+                public String getSz() {
                     return sz;
                 }
 
-                public void setSz(int sz) {
+                public void setSz(String sz) {
                     this.sz = sz;
                 }
 
-                public int getZj() {
+                public String getZj() {
                     return zj;
                 }
 
-                public void setZj(int zj) {
+                public void setZj(String zj) {
                     this.zj = zj;
                 }
             }

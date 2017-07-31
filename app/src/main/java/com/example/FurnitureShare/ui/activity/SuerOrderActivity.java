@@ -515,10 +515,10 @@ public class SuerOrderActivity extends BaseActivity {
         }
         tag.execute(new StringCallback() {
 
-            private int js;
-            private int jm;
-            private int hj;
-            private int bg;
+            private String js;
+            private String jm;
+            private String hj;
+            private String bg;
             private CountPrice.DataBeanX data;
             private String msg;
             private int code;
@@ -534,7 +534,7 @@ public class SuerOrderActivity extends BaseActivity {
                     data = countPrice.getData();
                     if (code == 200) {
                         bg = data.getBg();//损坏保证金
-                        hj = data.getHj();//合计
+                        hj = data.getHj();
                         jm = data.getJm();//减免额
                         js = data.getJs();//件数
 
