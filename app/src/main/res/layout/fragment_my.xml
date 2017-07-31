@@ -220,7 +220,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="实名认证"
+                android:text="信用认证"
                 android:textSize="14sp"
                 android:textColor="#484848"
                 android:layout_centerVertical="true"/>

@@ -32,8 +32,8 @@ public class StartActivity extends BaseActivity {
             //进入主页面
             if (user_first){
                 setting.edit().putBoolean("FIRST", false).commit();
-                startActivity(new Intent(StartActivity.this, Navigation.class));
-//                startActivity(new Intent(MainActivity.this, HomeActivity.class));
+//                startActivity(new Intent(StartActivity.this, Navigation.class));
+                startActivity(new Intent(StartActivity.this, HomeActivity.class));
                 //淡入淡出效果
                 overridePendingTransition(R.anim.fade, R.anim.hold);
                 finish();
