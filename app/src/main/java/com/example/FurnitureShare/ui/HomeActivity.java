@@ -28,6 +28,9 @@ import com.yanzhenjie.nohttp.rest.Response;
 
 import org.json.JSONObject;
 
+import java.net.HttpCookie;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -95,6 +98,12 @@ public class HomeActivity extends BaseFragmentActivity {
         public void onSucceed(int what, Response<JSONObject> response) {
 
             try {
+                java.net.CookieManager cookieManager = NoHttp.getCookieManager();
+                List<HttpCookie> cookies1 = cookieManager.getCookieStore().getCookies();
+                String cookies_login = String.valueOf(cookies1);
+                Log.e(TAG, "cookies_loginonSucceed: "+cookies_login );
+                String cookies = cookies_login.substring(1,cookies_login.indexOf("]"));
+                Log.e(TAG, "cookies_loginon: "+cookies );
 
                 JSONObject js = response.get();
                 Log.e(TAG, "usermessage: "+js );
@@ -116,6 +125,7 @@ public class HomeActivity extends BaseFragmentActivity {
 
 
                         SharedPreferences.Editor edit = FSApplication.instance.sp.edit();
+                        edit.putString("cookies", cookies);
                         edit.putString("status", status);
                         edit.putString("userid", userid);
                         edit.putString("avatar", avatar);

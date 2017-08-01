@@ -222,6 +222,7 @@ public class SuerOrderActivity extends BaseActivity {
 
         ;
     };
+    private String cookie;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -382,12 +383,14 @@ public class SuerOrderActivity extends BaseActivity {
         tvTotalPrice.setText("¥" + totalPrice);
 
         userid = FSApplication.instance.sp.getString("userid", "");
+        cookie = FSApplication.instance.sp.getString("cookies", "");
+        Log.e(TAG, "cookie: "+cookie );
 
         userMessage = (UserMessage) SharePreferencesUtils.getBean(
                 getBaseContext(), "userMessage");
         Log.e(TAG, "onCreate: " + userMessage);
 
-        PostPrice();
+
 
     }
 
@@ -406,6 +409,7 @@ public class SuerOrderActivity extends BaseActivity {
                 shippinginfor.setVisibility(View.VISIBLE);
 
                 addrid = address.get(0).getId();
+                Log.e(TAG, "onResumeaddrid: "+addrid );
                 String linkman = address.get(0).getLinkman();
                 tvName.setText(linkman);
                 String telnumber = address.get(0).getTelnumber();
@@ -422,6 +426,8 @@ public class SuerOrderActivity extends BaseActivity {
                 shippinginfor.setVisibility(View.GONE);
             }
         }
+
+        PostPrice();
 
     }
 
@@ -476,7 +482,13 @@ public class SuerOrderActivity extends BaseActivity {
 
     //计算价格
     private void PostPrice() {
-        PostRequest tag = OkGo.post(AllUrl.COUNTPRICE).tag(this);
+        PostRequest tag = OkGo.post(AllUrl.COUNTPRICE).tag(this).headers("cookie", cookie);//添加cookies
+//        tag.params("dosubmit", 1);
+        tag.params("uid", userid);
+//        Log.e(TAG, "uid: " + userid);
+//        tag.params("addrid", addrid);
+//        Log.e(TAG, "addrid: " + addrid);
+//        tag.params("way","ali");
 
         for (int x = 0; x < myJsonArray.length(); x++) {
 

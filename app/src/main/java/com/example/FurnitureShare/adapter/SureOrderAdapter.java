@@ -44,11 +44,11 @@ public class SureOrderAdapter extends BaseQuickAdapter<ProductInfo> {
 
         String per = guessBean.getPer();
         //取整（四舍五入）
-        double d1 = Double.valueOf(per);
-        double dd1=(double) (d1/24);
-        int i1 = (int) Math.round(dd1);
-        String price1 = String.valueOf(i1);
-        baseViewHolder.setText(R.id.tv_price,"月租：¥"+price1);
+//        double d1 = Double.valueOf(per);
+//        double dd1=(double) (d1/24);
+//        int i1 = (int) Math.round(dd1);
+//        String price1 = String.valueOf(i1);
+        baseViewHolder.setText(R.id.tv_price,"月租：¥"+per);
 
         String foregift = guessBean.getForegift();//押金
 //        baseViewHolder.setText(R.id.tv_foregift,"押金：¥"+foregift);

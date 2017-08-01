@@ -323,7 +323,7 @@ public class FlyBanner extends RelativeLayout {
                 }
             });
             //图片显示属性
-            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             if (mIsImageUrl) {
                 Picasso.with(getContext())
                         .load(mImageUrls.get(toRealPosition(position)))

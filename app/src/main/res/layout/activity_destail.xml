@@ -35,7 +35,10 @@
             android:layout_centerVertical="true"
             android:text=""
             android:textSize="15sp"
-            android:textColor="#191919"/>
+            android:textColor="#191919"
+            android:maxEms="9"
+            android:singleLine="true"
+            android:ellipsize="end"/>
 
         <View
             android:layout_width="match_parent"

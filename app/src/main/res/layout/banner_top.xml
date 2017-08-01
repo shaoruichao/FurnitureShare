@@ -8,9 +8,8 @@
     <com.example.FurnitureShare.view.FlyBanner
         android:id="@+id/bannerTop"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
-        FlyBanner:points_position="CENTER"
-        >
+        android:layout_height="200dp"
+        FlyBanner:points_position="CENTER">
 
     </com.example.FurnitureShare.view.FlyBanner>
 

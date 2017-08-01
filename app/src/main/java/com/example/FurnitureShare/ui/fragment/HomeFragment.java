@@ -27,6 +27,7 @@ import com.example.FurnitureShare.entry.Banner;
 import com.example.FurnitureShare.entry.Classify;
 import com.example.FurnitureShare.entry.HomeLIst;
 import com.example.FurnitureShare.nohttp.HttpListener;
+import com.example.FurnitureShare.ui.activity.DestailActivity;
 import com.example.FurnitureShare.ui.activity.MenuDestailActivity;
 import com.example.FurnitureShare.ui.activity.MenuListActivity;
 import com.example.FurnitureShare.utils.JsonUtil;
@@ -46,6 +47,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+
+import static com.example.FurnitureShare.app.FSApplication.mContext;
 
 /**
  * 首页
@@ -67,6 +70,7 @@ public class HomeFragment extends BaseFragment {
     private List<Classify.DataBean> classifyData;
     private String msg;//分类
 
+    private List<Banner.DataBean> bannerData;//轮播图
     private KProgressHUD hud;
 
     @Override
@@ -193,11 +197,11 @@ public class HomeFragment extends BaseFragment {
                 if (code == 200) {
                     Banner banner = JsonUtil.parseJsonToBean(js.toString(), Banner.class);
                     if (banner != null) {
-                        final List<Banner.DataBean> data = banner.getData();
-                        if (data.size()!=0){
+                        bannerData = banner.getData();
+                        if (bannerData.size()!=0){
                             bigPics = new ArrayList<>();
-                            for (int i = 0; i < data.size(); i++) {
-                                String thumb = data.get(i).getThumb();
+                            for (int i = 0; i < bannerData.size(); i++) {
+                                String thumb = bannerData.get(i).getThumb();
                                 Log.e(TAG, "onSucceed: " + thumb);
                                 bigPics.add(thumb);
                             }
@@ -269,14 +273,21 @@ public class HomeFragment extends BaseFragment {
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     private void initBannerTop(HomeListAdapter homeListAdapter) {
-        View bannerBigView = LayoutInflater.from(getActivity()).inflate(R.layout.banner_top, rvHome, false);
+        final View bannerBigView = LayoutInflater.from(getActivity()).inflate(R.layout.banner_top, rvHome, false);
         FlyBanner bannerTop = (FlyBanner) bannerBigView.findViewById(R.id.bannerTop);
         homeListAdapter.addHeadView0(bannerBigView);
         bannerTop.setImagesUrl(bigPics);
         bannerTop.setOnItemClickListener(new FlyBanner.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-//                ToastUtil.showToast(getActivity(),"position--->"+position);
+//                ToastUtil.showToast(getActivity(),bannerData.get(position).getCatid());
+                String id = bannerData.get(position).getId();
+                String title = bannerData.get(position).getTitle();
+                Intent intent = new Intent();
+                intent.putExtra("id",id);
+                intent.putExtra("title",title);
+                intent.setClass(mContext, DestailActivity.class);
+                startActivity(intent);
             }
         });
     }

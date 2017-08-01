@@ -286,12 +286,23 @@ public class DestailActivity extends BaseActivity {
                 }
                 break;
             case R.id.rl_joinshoppingcat:
-                click = "1";
-                showSelectDialog();
+                if (status.equals("1")) {
+                    click = "1";
+                    showSelectDialog();
+
+                } else {
+                    ToastUtil.showToast(getBaseContext(), "请先登录");
+                }
+
                 break;
             case R.id.rl_raise:
-                click = "2";
-                showSelectDialog();
+                if (status.equals("1")) {
+                    click = "2";
+                    showSelectDialog();
+
+                } else {
+                    ToastUtil.showToast(getBaseContext(), "请先登录");
+                }
                 break;
         }
     }
