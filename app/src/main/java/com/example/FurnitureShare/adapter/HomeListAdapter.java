@@ -117,6 +117,7 @@ public class HomeListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         .load(thumb)
                         .into(normalHolder.ivScenario);
                 final String name = dataBean.getName();
+                final String posid = dataBean.getPosid();
                 normalHolder.tvScenarioTitle.setText(name);
                 normalHolder.tvScenario.setText("场景·"+name);
                 String des = dataBean.getDes();
@@ -125,7 +126,7 @@ public class HomeListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent();
-                        intent.putExtra("posid",dataBean.getPosid());
+                        intent.putExtra("posid",posid);
                         intent.putExtra("typename",name);
                         intent.setClass(mContext, HomeListDestailActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
